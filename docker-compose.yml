@@ -1,0 +1,26 @@
+version: '3.4'
+services:
+  swoft:
+    image: hyperf/hyperf:8.0-alpine-v3.12-swoole
+    container_name: hyperf
+    environment:
+      - APP_ENV=dev
+      - APP_DEBUG=1
+      - TIMEZONE=Asia/Shanghai
+    restart: always
+    ports:
+      - "9481:9501"
+    volumes:
+      - ./:/var/www/hyperf
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    networks:
+      - mynet
+networks:
+  mynet:
+    external: true
+
+
+
+

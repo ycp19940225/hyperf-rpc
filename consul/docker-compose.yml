@@ -1,0 +1,19 @@
+version: '3'
+services:
+  consul:
+    container_name: consul
+    image: consul:1.13.3
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "18500:8500"
+    volumes:
+      - /opt/disk/docker/volumes/consul/conf:/consul/conf
+      - /opt/disk/docker/volumes/consul/data:/consul/data
+    privileged: true
+    networks:
+      - mynet
+networks:
+  mynet:
+    external: true
