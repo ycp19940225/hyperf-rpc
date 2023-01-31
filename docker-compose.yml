@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   swoft:
-    image: hyperf/hyperf:8.0-alpine-v3.12-swoole
+    image: hyperf/hyperf:7.4-alpine-v3.11-swoole
     container_name: hyperf
     environment:
       - APP_ENV=dev
@@ -9,7 +9,8 @@ services:
       - TIMEZONE=Asia/Shanghai
     restart: always
     ports:
-      - "9481:9501"
+      - "9501:9501"
+      - "9504:9504"
     volumes:
       - ./:/var/www/hyperf
     stdin_open: true

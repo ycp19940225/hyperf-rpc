@@ -11,8 +11,11 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use App\JsonRpc\CalculatorServiceInterface;
+use App\JsonRpc\MathValue;
 use Hyperf\HttpServer\Annotation\AutoController;
 use Hyperf\HttpServer\Annotation\RequestMapping;
+use Hyperf\Utils\ApplicationContext;
 
 /**
  * @AutoController()
@@ -37,5 +40,15 @@ class IndexController extends AbstractController
         return [
             'method' => 'sss',
         ];
+    }
+
+    public function testRpc()
+    {
+        $client = ApplicationContext::getContainer()->get(CalculatorServiceInterface::class);
+
+        /** @var MathValue $result */
+        $result = $client->sum(1, 2);
+
+        var_dump($result);
     }
 }

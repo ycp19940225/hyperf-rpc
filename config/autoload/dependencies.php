@@ -1,6 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
+use Hyperf\Utils\Serializer\SerializerFactory;
+use Hyperf\Utils\Serializer\Serializer;
 /**
  * This file is part of Hyperf.
  *
@@ -10,4 +13,6 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 return [
+    App\JsonRpc\CalculatorServiceInterface::class => App\JsonRpc\CalculatorServiceConsumer::class,
+    Hyperf\Contract\NormalizerInterface::class => new SerializerFactory(Serializer::class),
 ];
