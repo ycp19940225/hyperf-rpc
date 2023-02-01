@@ -14,6 +14,7 @@
     "require": {
         "php": ">=7.3",
         "hyperf/cache": "~2.2.0",
+        "hyperf/circuit-breaker": "^2.2",
         "hyperf/command": "~2.2.0",
         "hyperf/config": "~2.2.0",
         "hyperf/contract": "^2.2",
@@ -27,6 +28,7 @@
         "hyperf/memory": "~2.2.0",
         "hyperf/process": "~2.2.0",
         "hyperf/redis": "~2.2.0",
+        "hyperf/retry": "^2.2",
         "hyperf/rpc-client": "^2.2",
         "hyperf/rpc-server": "^2.2",
         "hyperf/service-governance": "^2.2",
